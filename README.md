@@ -4,13 +4,7 @@ Java 17+ client for VaultSens. It supports API key authentication, file uploads,
 
 ## Install
 
-The library is not published to Maven Central yet. Build and install it locally:
-
-```bash
-mvn install
-```
-
-Then add it to a Maven project:
+Version `0.1.0` is available from Maven Central. Add it to a Maven project:
 
 ```xml
 <dependency>
@@ -18,6 +12,12 @@ Then add it to a Maven project:
   <artifactId>vaultsens-sdk</artifactId>
   <version>0.1.0</version>
 </dependency>
+```
+
+For Gradle:
+
+```gradle
+implementation 'io.github.lutheralien:vaultsens-sdk:0.1.0'
 ```
 
 The only runtime dependency is Jackson Databind. The client uses the JDK HTTP client.
@@ -134,7 +134,7 @@ The tests use a local HTTP server. No VaultSens account is needed.
 
 ## Publish to Maven Central
 
-The release coordinates are `io.github.lutheralien:vaultsens-sdk:0.1.0`. Publishing requires the verified `io.github.lutheralien` Central Portal namespace and a PGP signing key. You can upload a signed bundle in the Central Portal without a Portal token. The signed bundle has been generated locally at `target/central-publishing/central-bundle.zip` for this release.
+Version `0.1.0` was published under the verified `io.github.lutheralien` namespace. Future versions require a PGP signing key. You can upload a signed bundle in the Central Portal without a Portal token.
 
 For future command-line releases, generate a Portal user token and configure it in your private `~/.m2/settings.xml` file (never commit it):
 
@@ -156,7 +156,7 @@ Import or create a GPG signing key, publish its public key to a key server, and 
 mvn -P release clean deploy
 ```
 
-The `release` profile creates source and Javadoc JARs, signs the artifacts, uploads through Sonatype's Central Publishing plugin, and waits for publication. Check that version `0.1.0` is unused before running it; Maven Central releases cannot be replaced. A local check without uploading or signing is:
+The `release` profile creates source and Javadoc JARs, signs the artifacts, uploads through Sonatype's Central Publishing plugin, and waits for publication. Bump the version before each release; Maven Central releases cannot be replaced. A local check without uploading or signing is:
 
 ```bash
 mvn -P release -Dgpg.skip=true clean verify
