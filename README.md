@@ -14,7 +14,7 @@ Then add it to a Maven project:
 
 ```xml
 <dependency>
-  <groupId>com.vaultsens</groupId>
+  <groupId>io.github.lutheralien</groupId>
   <artifactId>vaultsens-sdk</artifactId>
   <version>0.1.0</version>
 </dependency>
@@ -134,7 +134,7 @@ The tests use a local HTTP server. No VaultSens account is needed.
 
 ## Publish to Maven Central
 
-The release coordinates are `com.vaultsens:vaultsens-sdk:0.1.0`. Publishing requires a Central Portal account with the `com.vaultsens` namespace verified, a Portal user token, and a PGP signing key. Configure the token in your private `~/.m2/settings.xml` file (never commit it):
+The release coordinates are `io.github.lutheralien:vaultsens-sdk:0.1.0`. Publishing requires the verified `io.github.lutheralien` Central Portal namespace, a Portal user token, and a PGP signing key. Configure the token in your private `~/.m2/settings.xml` file (never commit it):
 
 ```xml
 <settings>
