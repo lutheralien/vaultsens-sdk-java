@@ -134,7 +134,9 @@ The tests use a local HTTP server. No VaultSens account is needed.
 
 ## Publish to Maven Central
 
-The release coordinates are `io.github.lutheralien:vaultsens-sdk:0.1.0`. Publishing requires the verified `io.github.lutheralien` Central Portal namespace, a Portal user token, and a PGP signing key. Configure the token in your private `~/.m2/settings.xml` file (never commit it):
+The release coordinates are `io.github.lutheralien:vaultsens-sdk:0.1.0`. Publishing requires the verified `io.github.lutheralien` Central Portal namespace and a PGP signing key. You can upload a signed bundle in the Central Portal without a Portal token. The signed bundle has been generated locally at `target/central-publishing/central-bundle.zip` for this release.
+
+For future command-line releases, generate a Portal user token and configure it in your private `~/.m2/settings.xml` file (never commit it):
 
 ```xml
 <settings>
